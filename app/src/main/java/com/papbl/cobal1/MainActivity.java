@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TabLayout mTablay;
     private ViewPager mViewPager;
-    private viewAdapter mainTab;
+    private viewMainAdapter mainTab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         mViewPager = findViewById(R.id.mainViewPager);
         setupMainPager(mViewPager);
-        mainTab = new viewAdapter(getSupportFragmentManager());
+        mainTab = new viewMainAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mainTab);
 
         mTablay = findViewById(R.id.mainTabLayout);
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         mTablay.getTabAt(1).setIcon(R.drawable.ic_chat_);
     }
     private void setupMainPager(ViewPager viewPager){
-        viewAdapter adapter = new viewAdapter(getSupportFragmentManager());
+        viewMainAdapter adapter = new viewMainAdapter(getSupportFragmentManager());
         adapter.addFragment(new fm_home(),"Home");
         adapter.addFragment(new fm_chat(),"Chat");
         viewPager.setAdapter(adapter);

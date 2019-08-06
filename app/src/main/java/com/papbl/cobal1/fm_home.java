@@ -35,7 +35,7 @@ public class fm_home extends Fragment {
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        viewAdapter adapter = new viewAdapter(getFragmentManager());
+        viewHomeAdapter adapter = new viewHomeAdapter(getFragmentManager());
         adapter.addFragment(new fm_bp(),"Budidaya Pertanian");
         adapter.addFragment(new fm_pt(),"Proteksi Tanaman");
         adapter.addFragment(new fm_ph(),"Pengolahan Hasil");
