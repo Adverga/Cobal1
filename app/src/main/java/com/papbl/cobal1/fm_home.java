@@ -2,6 +2,7 @@ package com.papbl.cobal1;
 
 
 import android.os.Bundle;
+
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
@@ -17,9 +18,11 @@ public class fm_home extends Fragment {
 
     private ViewPager viewPager;
     private TabLayout tabLayout;
+
     public fm_home() {
         // Required empty public constructor
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,10 +38,19 @@ public class fm_home extends Fragment {
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        viewHomeAdapter adapter = new viewHomeAdapter(getFragmentManager());
+<<<<<<< HEAD
+        viewHomeAdapter adapter = new viewHomeAdapter(getChildFragmentManager());
+        adapter.addFragment(new fm_bp(), "Budidaya Pertanian");
+        adapter.addFragment(new fm_pt(), "Proteksi Tanaman");
+        adapter.addFragment(new fm_ph(), "Pengolahan Hasil");
+        adapter.addFragment(new fm_pelayanan(), "Pelayanan");
+        adapter.addFragment(new fm_sosialekonomi(), "Sosial Ekonomi");
+=======
+        viewAdapter adapter = new viewAdapter(getFragmentManager());
         adapter.addFragment(new fm_bp(),"Budidaya Pertanian");
         adapter.addFragment(new fm_pt(),"Proteksi Tanaman");
         adapter.addFragment(new fm_ph(),"Pengolahan Hasil");
+>>>>>>> parent of c51d938... add home adapter
         viewPager.setAdapter(adapter);
     }
 

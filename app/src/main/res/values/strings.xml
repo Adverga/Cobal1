@@ -8,5 +8,8 @@
     <string name="bp">Budidaya Pertanian</string>
     <string name="ph">Pengolahan Hasil</string>
     <string name="pt">Proteksi Tanaman</string>
+    <string name="pelayanan">Departemen Pelayanan</string>
+    <string name="sosek">Departemen Sosial Ekonomi</string>
     <string name="app_desc">Teman Tani Pintar</string>
+    <string name="contacs">Contact Us</string>
 </resources>
