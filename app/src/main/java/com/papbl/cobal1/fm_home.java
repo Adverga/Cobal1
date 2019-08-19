@@ -10,6 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,6 +21,8 @@ public class fm_home extends Fragment {
 
     private ViewPager viewPager;
     private TabLayout tabLayout;
+    private List<String> listbudidaya = new ArrayList<>();
+    private List<String> listpengolahan = new ArrayList<>();
 
     public fm_home() {
         // Required empty public constructor
@@ -34,23 +39,24 @@ public class fm_home extends Fragment {
         tabLayout = view.findViewById(R.id.homeTabLayout);
         tabLayout.setupWithViewPager(viewPager);
 
+        listbudidaya.add("budidaya ikan");
+        listbudidaya.add("budidaya tempe");
+        listbudidaya.add("budidaya jengkol");
+
+        listpengolahan.add("Pengolahan Jahe");
+        listpengolahan.add("Pengolahan Air");
+        listpengolahan.add("Pengolahan Tanah");
+
         return view;
     }
 
     private void setupViewPager(ViewPager viewPager) {
-<<<<<<< HEAD
-        viewHomeAdapter adapter = new viewHomeAdapter(getChildFragmentManager());
-        adapter.addFragment(new fm_bp(), "Budidaya Pertanian");
-        adapter.addFragment(new fm_pt(), "Proteksi Tanaman");
+        viewAdapter adapter = new viewAdapter(getChildFragmentManager());
+        adapter.addFragment(new fm_bp(listbudidaya), "Budidaya Pertanian");
+        adapter.addFragment(new fm_bp(listpengolahan), "Proteksi Tanaman");
         adapter.addFragment(new fm_ph(), "Pengolahan Hasil");
-        adapter.addFragment(new fm_pelayanan(), "Pelayanan");
+        adapter.addFragment(new fm_pelayanan(), "Penyuluhan");
         adapter.addFragment(new fm_sosialekonomi(), "Sosial Ekonomi");
-=======
-        viewAdapter adapter = new viewAdapter(getFragmentManager());
-        adapter.addFragment(new fm_bp(),"Budidaya Pertanian");
-        adapter.addFragment(new fm_pt(),"Proteksi Tanaman");
-        adapter.addFragment(new fm_ph(),"Pengolahan Hasil");
->>>>>>> parent of c51d938... add home adapter
         viewPager.setAdapter(adapter);
     }
 
