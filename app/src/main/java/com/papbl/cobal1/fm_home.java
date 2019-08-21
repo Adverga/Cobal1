@@ -8,6 +8,8 @@ import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -46,6 +48,14 @@ public class fm_home extends Fragment {
         listpengolahan.add("Pengolahan Jahe");
         listpengolahan.add("Pengolahan Air");
         listpengolahan.add("Pengolahan Tanah");
+
+        FloatingActionButton fab = view.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
         return view;
     }

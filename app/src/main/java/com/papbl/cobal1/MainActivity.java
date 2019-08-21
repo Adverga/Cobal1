@@ -7,12 +7,13 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
-
     private BottomNavigationView btmNav;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fm_container, new fm_home())
                 .commit();
-
     }
     private BottomNavigationView.OnNavigationItemSelectedListener navSListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {

@@ -1,6 +1,7 @@
 package com.papbl.cobal1;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,14 +24,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
             mCardView = itemView.findViewById(R.id.kCardView);
             mTextView = itemView.findViewById(R.id.kText);
-
-            View.OnClickListener onClickListener = new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                }
-            };
-            mCardView.setOnClickListener(onClickListener);
         }
     }
     public MyAdapter (Context mContext, List<String> mDataset){
@@ -47,8 +40,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         holder.mTextView.setText(mDataset.get(position));
+        holder.mCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mDataset.get(position);
+                Bundle bundle = new Bundle();
+
+            }
+        });
     }
 
     @Override

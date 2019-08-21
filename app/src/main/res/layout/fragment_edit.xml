@@ -1,14 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fm_edit">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
-</FrameLayout>
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnUpload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/btn_p"
+            android:elevation="5dp"
+            android:padding="2dp"
+            android:text="Upload"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/txtJudul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Judul :"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnUpload" />
+        <EditText
+            android:id="@+id/editJudul"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/btn_p"
+            android:inputType="text"
+            android:contentDescription="@string/editJudul"
+            app:layout_constraintBottom_toBottomOf="@+id/txtJudul"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtJudul"
+            app:layout_constraintTop_toTopOf="@+id/txtJudul" />
+        <TextView
+            android:id="@+id/txtAlat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="Alat :"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editJudul" />
+        <EditText
+            android:id="@+id/editAlat"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/btn_p"
+            android:inputType="textMultiLine"
+            app:layout_constraintBottom_toBottomOf="@+id/txtAlat"
+            app:layout_constraintEnd_toStartOf="@+id/addAlat"
+            app:layout_constraintStart_toEndOf="@+id/txtAlat"
+            app:layout_constraintTop_toTopOf="@+id/txtAlat" />
+        <TextView
+            android:id="@+id/addAlat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/btn_p"
+            android:text="+"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:paddingHorizontal="13dp"
+            app:layout_constraintBottom_toBottomOf="@+id/editAlat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editAlat" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAlat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/editAlat" />
+        <TextView
+            android:id="@+id/txtBahan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Bahan :"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvAlat" />
+        <EditText
+            android:id="@+id/editBahan"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/btn_p"
+            android:inputType="textMultiLine"
+            app:layout_constraintBottom_toBottomOf="@+id/txtBahan"
+            app:layout_constraintEnd_toStartOf="@+id/addBahan"
+            app:layout_constraintStart_toEndOf="@+id/txtBahan"
+            app:layout_constraintTop_toTopOf="@+id/txtBahan" />
+        <TextView
+            android:id="@+id/addBahan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/btn_p"
+            android:text="+"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:paddingHorizontal="13dp"
+            app:layout_constraintBottom_toBottomOf="@+id/editBahan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editBahan" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvBahan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/txtBahan" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
